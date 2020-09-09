@@ -1,8 +1,9 @@
-
-# Project Title : GoodReadMeGenerator
+function generateMarkdown(data) {
+  return `
+# Project Title : ${data.title}
 
 ## Project Description:
-It Produces a ReadMe.MD file
+${data.desc}
 
 ## Table of Contents
 * [Installation](#installation)
@@ -15,23 +16,23 @@ It Produces a ReadMe.MD file
 * [Badges](#badges)
 
 ## Installation
-npm i, then node index.js
+${data.install}
 
 ## Usage
-npm i, then node index.js
+${data.usage}
 
 ## Contributors
-AlexFalconer
+${data.contributors}
 
 ## Test
-Run test
+${data.test}
 
 ## Questions
-If you have any questions, contact AlexFalconer on GitHub.
+If you have any questions, contact ${data.username} on GitHub.
 
 
 ## License
-undefined
+${data.license}
 
 Copyright (c) [year] [fullname]
 
@@ -55,9 +56,13 @@ SOFTWARE.
 
 
 ## Author 
-![GitHub profile pic](https://avatars2.githubusercontent.com/u/59853708?v=4)
+![GitHub profile pic](${data.image})
 
 ## Badges
 
-![badmath](https://img.shields.io/github/repo-size/AlexFalconer/Homework9-ReadMeGenerator)
+![badmath](https://img.shields.io/github/repo-size/${data.username}/${data.repo})
 
+`;
+}
+
+module.exports = generateMarkdown;
